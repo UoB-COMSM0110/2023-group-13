@@ -1,0 +1,38 @@
+Final two game ideas: 
+
+Game 1: 
+Brick Breaker - https://www.coolmathgames.com/0-brick-breaker 
+Cited from - https://www.getready.io/c002brickbreaker 
+
+" In this game, the player moves a PADDLE from side-to-side to hit a BALL. 
+The game’s objective is to eliminate all of the BRICKS at the top of the screen by hitting them with the BALL. 
+But, if the ball hits the bottom ENCLOSURE, the player loses and the game ends.
+To win the game, all the BRICKS must be eliminated." 
+
+The twist: 
+A timer will be added and the player aims to clear the bricks from the screen before the timer ends. 
+To make the game novel, we will have bricks of different colours that will trigger a special effect. It could be: 
+- A power-up (remove bricks in the surrounding area, add another ball, etc). 
+- a consequence (Add more bricks to the screen, make the ball travel faster, reset the board, etc). 
+
+
+Game 2:
+Doodle Jump - https://doodlejump.io 
+Cited from : https://doodlejumpsky.fandom.com/wiki/Doodle_Jump_(game)
+
+"Gameplay consists of guiding a four-legged creature known as the "Doodler" up an unending series
+of platforms without falling in an attempt to gain a high score. The character is controlled by
+tilting the gaming device in the desired direction
+Players can get a short boost from various objects, such as propeller hats, jetpacks, rockets, springs or trampolines. 
+There are also monsters that the Doodler has to shoot or jump on to eliminate. You can aim your shot by tapping on different
+parts of the screen, sending a laser in the direction of your finger. There is no definitive end to the game, but the end for 
+each gameplay happens when you fall (by reaching the bottom of the screen), jump into a monster, get sucked into a black hole, 
+or abducted by a UFO. " 
+
+The twist: 
+- Instead of moving with the arrow keys and/or tilting a device, the player will instead click to add a platform under the character. 
+  The platform mechanics will work similarly to the popular Pong game where the middle of the platform will make the character jump in its place,
+  and jumping from the edges of the platform will make the character move side-ways. The player can place a platform anywhere on the screen but
+  can only generate one platform at a time. 
+- To make it novel, we will add achievements that the player can unlock based on their highest score (e.g. characters, power-ups, 
+  frequency boost of power-ups?). 
