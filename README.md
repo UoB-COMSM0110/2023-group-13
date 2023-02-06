@@ -1,7 +1,7 @@
 # 2023-group-13
 ## The Team
 Team photo.
-
+![My Image](Group_13.jpg)
 
 # Report
 ## Introduction (5% ~250 words)
