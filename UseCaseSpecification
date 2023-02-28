@@ -1,0 +1,80 @@
+Use-Cases
+
+2.1 Use-Case 1: Start Game
+Description: This use-case describes how a player can start a new game of Doodle Jump.
+Actors: Player
+Pre-Conditions: The game must be installed on the player's mobile device.
+Basic Flow:
+The player opens the Doodle Jump app on their mobile device.
+The game's start screen is displayed, offering options to start the game, pick a character, go to settings, or view a high-score board.
+If the player taps "Start Game," a new game begins, and Doodle appears on the first platform.
+
+
+Alternate Flows:
+If the player taps "Pick a Character," they are taken to a screen where they can select a character to use in-game.
+If the player taps "Settings," they are taken to a screen where they can adjust game settings.
+If the player taps "View High-Score Board" they are taken to a screen displaying the current high-scores.
+
+2.2 Move
+Description: This use-case describes how the player can move Doodle using a keyboard.
+Actors: Player
+Pre-Conditions: The game must be in progress and the player must be using a device with a keyboard.
+Basic Flow:
+The player presses the left arrow key to move Doodle left.
+The player presses the right arrow key to move Doodle right.
+When Doodle lands on a platform, the player presses the space bar to make Doodle jump to the next platform.
+Doodle continues to jump from platform to platform until the player makes a mistake or reaches the end of the level.
+Alternate Flows:
+If Doodle falls off the bottom of the screen, the game is over.
+If Doodle jumps into an enemy or obstacle, the game is over.
+The player can choose to “Go back to start”, “Pick new Character”, or “Play again” as current character. 
+
+2.3 Use-Case 3: Jump 
+Description: This use-case describes how the player can make Doodle jump from one platform to another.
+Actors: Player
+Pre-Conditions: The game must be in progress, and the player must be using a keyboard to move.
+Basic Flow:
+The player uses the keyboard to move Doodle left or right.
+When Doodle lands on a platform, the player presses the space bar to make Doodle jump to the next platform.
+Doodle continues to jump from platform to platform until the player makes a mistake or reaches the end of the level.
+Alternate Flows:
+If Doodle falls off the bottom of the screen, the game is over.
+If Doodle jumps into an enemy or obstacle, the game is over.
+
+*** 2.4 Use-Case 4: Collect Coins
+Description: This use-case describes how the player can collect coins in the game.
+Actors: Player
+Pre-Conditions: The game must be in progress.
+Basic Flow:
+Coins are scattered throughout the game on various platforms.
+When Doodle lands on a platform with a coin, the coin is automatically collected.
+Coins can be used to buy power-ups and other items in the game.
+Alternate Flows:
+If Doodle falls off the bottom of the screen while collecting a coin, the coin is lost.
+If Doodle jumps into an enemy or obstacle while collecting a coin, the coin is lost.
+
+
+*** 2.5 Use-Case 5: Use Power-Ups
+Description: This use-case describes how the player can use power-ups in the game.
+Actors: Player
+Pre-Conditions: The game must be in progress, and the player must have collected a power-up.
+Basic Flow:
+The player taps the screen to activate the power-up.
+The power-up effect is applied to Doodle for a limited time.
+Alternate Flows:
+If the player taps the screen while Doodle is not on a platform, the power-up is wasted.
+If Doodle falls off the bottom of the screen while the power-up is in effect, the power-up is wasted.
+
+2.6 Use-Case 6: Unlock New Characters
+Description: This use-case describes how the player can unlock new characters in the game.
+Actors: Player
+Pre-Conditions: The player must meet certain benchmarks, such as reaching a certain score or collecting a certain number of coins.
+Basic Flow:
+The player meets a certain benchmark, such as reaching a certain score or completing a certain level.
+A notification appears on the screen informing the player that they have unlocked a new character.
+The player goes to the character selection screen.
+The player selects the new character and starts playing with them.
+Alternate Flows:
+If the player has already unlocked all available characters, no notification appears.
+If the player does not want to switch to the new character, they can continue playing with their current character.
+
