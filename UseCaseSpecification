@@ -59,7 +59,7 @@ Description: This use-case describes how the player can use power-ups in the gam
 Actors: Player
 Pre-Conditions: The game must be in progress, and the player must have collected a power-up.
 Basic Flow:
-The player taps the screen to activate the power-up.
+The player ** [presses shift key] to activate the power-up.
 The power-up effect is applied to Doodle for a limited time.
 Alternate Flows:
 If the player taps the screen while Doodle is not on a platform, the power-up is wasted.
