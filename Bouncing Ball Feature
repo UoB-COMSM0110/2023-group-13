@@ -1,0 +1,162 @@
+
+// Define the initial state of the ball and platform
+float ballX, ballY; 
+float ballSize = 20; 
+float ballSpeed = 5; 
+float ballSpeedX = 0; 
+float gravity = 0.2; 
+float bounce = -7; 
+
+float platformX, platformY;
+float platformWidth = 100;
+float platformHeight = 10; 
+float platformSpeed = 10; 
+
+//Define the state of the fixed platform
+ArrayList<PVector> fixedPlatforms; // Stores the positions of all fixed platforms
+int fixedPlatformNum = 10; // The number of initial fixed platforms
+float fixedPlatformGap = 150; 
+float fixedPlatformSpeed = 2;
+float fixedPlatformMinY = -200; 
+
+
+int backgroundColor = color(230, 230, 250); 
+float viewOffsetY = 0; 
+
+void setup() {
+  size(800, 600);
+  smooth();
+  
+  // Initialize the position of the ball and the platform
+  ballX = width / 2;
+  ballY = height - 50;
+  platformX = width / 2;
+  platformY = height - 30;
+  
+  // Initialize the position of the fixed platform
+  fixedPlatforms = new ArrayList<PVector>();
+  for (int i = 0; i < fixedPlatformNum; i++) {
+    fixedPlatforms.add(new PVector(
+      random(width - platformWidth), // X Coordinate
+      height - 100 - i * fixedPlatformGap //  Y coordinates
+    ));
+  }
+}
+
+void draw() {
+  updateBall();
+  updatePlatform();
+  
+  background(backgroundColor);
+  
+  // draw fixed platform
+  for (PVector platformPos : fixedPlatforms) {
+    drawPlatform(platformPos.x, platformPos.y);
+  }
+  
+  // Draw the ball and platform
+  drawBall(ballX, ballY);
+  drawPlatform(platformX, platformY);
+  
+  
+  updateFixedPlatforms();
+  
+
+  viewOffsetY = max(viewOffsetY, height - ballY - height / 3);
+  translate(0, viewOffsetY);
+}
+
+void updateBall() {
+
+  ballX += ballSpeedX;
+  ballY += ballSpeed;
+  
+
+  ballSpeed += gravity;
+  
+
+if (isColliding(ballX, ballY, ballSize, platformX, platformY, platformWidth, platformHeight)) {
+// bounce the ball
+ballSpeed = bounce;
+// Let the horizontal velocity of the ball randomly shift by a certain amount, here still needs to change!!!!!
+ballSpeedX += random(-1, 1);
+}
+  // hits the edge
+  if (ballX + ballSize / 2 > width || ballX - ballSize / 2 < 0) {
+    ballSpeedX *= -1; 
+  }
+
+// If the ball falls out of the window
+if (ballY > height + ballSize) {
+resetGame();
+}
+}
+
+void updatePlatform() {
+
+if (keyPressed && keyCode == LEFT) {
+platformX -= platformSpeed;
+platformX = max(platformX, platformWidth / 2);
+}
+
+
+if (keyPressed && keyCode == RIGHT) {
+platformX += platformSpeed;
+platformX = min(platformX, width - platformWidth / 2);
+}
+}
+
+void updateFixedPlatforms() {
+// all fixed platforms move down
+for (PVector platformPos : fixedPlatforms) {
+platformPos.y += fixedPlatformSpeed;
+}
+
+// If the lowest fixed platform exceeds the window, remove it and generate a new one
+if (fixedPlatforms.get(0).y > height + fixedPlatformGap) {
+fixedPlatforms.remove(0);
+fixedPlatforms.add(new PVector(
+random(width - platformWidth), 
+fixedPlatforms.get(fixedPlatforms.size() - 1).y - fixedPlatformGap // placed on top
+));
+}
+}
+
+void resetGame() {
+ballX = width / 2;
+ballY = height - 50;
+ballSpeedX = 0;
+ballSpeed = 5;
+platformX = width / 2;
+platformY = height - 30;
+
+// Regenerate Fixed Platform
+fixedPlatforms.clear();
+for (int i = 0; i < fixedPlatformNum; i++) {
+fixedPlatforms.add(new PVector(
+random(width - platformWidth), 
+fixedPlatformMinY - i * fixedPlatformGap 
+));
+}
+}
+
+void drawBall(float x, float y) {
+noStroke();
+fill(255, 0, 0);
+ellipse(x, y, ballSize, ballSize);
+}
+
+void drawPlatform(float x, float y) {
+noStroke();
+fill(0, 255, 0);
+rectMode(CENTER);
+rect(x, y, platformWidth, platformHeight);
+}
+
+boolean isColliding(float x1, float y1, float size1, float x2, float y2, float width2, float height2) {
+if (x1 + size1 / 2 < x2 - width2 / 2 || x1 - size1 /2 > x2 + width2 / 2 || y1 + size1 / 2 < y2 - height2 / 2 || y1 - size1 / 2 > y2 + height2 / 2) {
+return false;
+} else {
+return true;
+}
+}
